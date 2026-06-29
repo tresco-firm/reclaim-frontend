@@ -1,11 +1,13 @@
-import "./App.css";
-
-function App() {
+import { Navbar, Footer } from "./components";
+import Landing from "./pages/Landing";
+const App = () => {
   return (
-    <>
-      <div className="max-xl:text-9xl">using tailwind</div>
-    </>
+    <div>
+      <Navbar />
+      <Landing />
+      <Footer />
+    </div>
   );
-}
+};
 
 export default App;
