@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../constants";
-import { supabase } from "../config/supabase";
+import { useAuth } from "../utils/auth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signIn, signOut } = useAuth();
 
   return (
     <header className="relative">
-      <main className="flex items-center justify-between px-8 py-6 lg:px-32 xl:px-40">
+      <main className="flex items-center justify-between px-8 py-4 lg:px-32 xl:px-40">
         {/* Logo */}
         <section className="flex items-center gap-4">
           <img src="/logo.png" alt="Logo" className="w-10 h-10" />
@@ -27,11 +28,23 @@ const Navbar = () => {
             </a>
           ))}
         </nav>
-
-        {/* Desktop Button */}
-        <button className="hidden px-8 py-3 font-semibold text-white rounded-xl bg-primary hover:bg-primary/90 md:block">
-          Get Started
-        </button>
+        <section className="authentication-section max-md:hidden">
+          {user ? (
+            <button
+              className="px-8 py-3 border-2 rounded-full text-primary border-primary hover:bg-primary/90 hover:text-white text-semibold"
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <button
+              className="px-8 py-3 text-white rounded-full bg-primary text-semibold"
+              onClick={signIn}
+            >
+              Sign In
+            </button>
+          )}
+        </section>
 
         {/* Mobile Hamburger */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -53,9 +66,21 @@ const Navbar = () => {
             </a>
           ))}
 
-          <button className="px-6 py-3 m-6 text-white rounded-lg bg-primary">
-            Get Started
-          </button>
+          {user ? (
+            <button
+              className="px-8 py-2 border-2 rounded-full text-primary border-primary hover:bg-primary/90 hover:text-white text-semibold"
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <button
+              className="px-8 py-2 text-white rounded-full bg-primary text-semibold"
+              onClick={signIn}
+            >
+              Sign In
+            </button>
+          )}
         </div>
       )}
     </header>

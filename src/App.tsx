@@ -1,12 +1,14 @@
 import { Navbar, Footer } from "./components";
 import Landing from "./pages/Landing";
+import { AuthProvider } from "./utils/auth";
+
 const App = () => {
   return (
-    <div>
+    <AuthProvider>
       <Navbar />
       <Landing />
       <Footer />
-    </div>
+    </AuthProvider>
   );
 };
 
