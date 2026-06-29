@@ -2,7 +2,7 @@ const Questionnaires = () => {
   return (
     <div>
       <img
-        src="/questionnaire.png"
+        src="/hero-questionnaire.png"
         alt="Questionnaire"
         className="w-full h-auto"
       />
