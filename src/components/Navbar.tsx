@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../constants";
-import { login, supabase } from "../config/supabase";
+import { supabase } from "../config/supabase";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,16 +57,6 @@ const Navbar = () => {
             Get Started
           </button>
         </div>
-      )}
-
-      <button onClick={login}>Continue with Google</button>
-      {session ? (
-        <div>
-          <p>Welcome, {session.user.email}</p>
-          <button onClick={() => supabase.auth.signOut()}>Sign Out</button>
-        </div>
-      ) : (
-        <button onClick={login}>Sign In with Google</button>
       )}
     </header>
   );
