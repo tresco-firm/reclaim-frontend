@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../constants";
+import { login, supabase } from "../config/supabase";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
       <main className="flex items-center justify-between px-8 py-6 lg:px-32 xl:px-40">
         {/* Logo */}
         <section className="flex items-center gap-4">
-          <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
+          <img src="/logo.png" alt="Logo" className="w-10 h-10" />
           <h1 className="text-3xl font-bold text-primary">Reclaim</h1>
         </section>
 
@@ -56,6 +57,16 @@ const Navbar = () => {
             Get Started
           </button>
         </div>
+      )}
+
+      <button onClick={login}>Continue with Google</button>
+      {session ? (
+        <div>
+          <p>Welcome, {session.user.email}</p>
+          <button onClick={() => supabase.auth.signOut()}>Sign Out</button>
+        </div>
+      ) : (
+        <button onClick={login}>Sign In with Google</button>
       )}
     </header>
   );
