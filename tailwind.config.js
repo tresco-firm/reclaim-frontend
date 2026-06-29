@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   darkMode: "class",
   theme: {
     fontSize: {
@@ -18,7 +18,7 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"],
       },
       colors: {
-        primary: "#3a6ff8",
+        primary: "#004FD9",
         surface: "#faf8ff",
         "surface-dim": "#d9d9e5",
         "on-surface": "#1a1c1e",
