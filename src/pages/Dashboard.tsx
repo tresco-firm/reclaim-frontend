@@ -2,7 +2,6 @@ import {
   Bell,
   CircleHelp,
   Focus,
-  Gauge,
   Grid2X2,
   LineChart,
   PlusCircle,

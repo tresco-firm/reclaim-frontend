@@ -19,6 +19,11 @@ create table if not exists public.questionnaire_responses (
   updated_at timestamptz not null default now()
 );
 
+alter table public.questionnaire_responses
+  add column if not exists reclaimed_time_uses text[] not null default '{}',
+  add column if not exists focus_dream text not null default '',
+  add column if not exists why_this_dream_matters text not null default '';
+
 alter table public.questionnaire_responses enable row level security;
 
 create policy "Users can read their questionnaire response"
