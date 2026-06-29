@@ -1,6 +1,21 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;

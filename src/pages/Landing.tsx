@@ -1,7 +1,7 @@
 const Landing = () => (
-  <main className="flex flex-row justify-between py-15 px-45 gap-30">
+  <main className="flex flex-row justify-between py-15 px-45 gap-30 max-md:flex-col-reverse max-md:gap-10">
     <section className="flex flex-col items-start justify-center gap-6 min-w-[50%]">
-      <h1 className="font-bold text-5xl/15">
+      <h1 className="text-4xl font-bold">
         Reclaim Your Life
         <br />
         from the <span className="text-[#004FD9] inline">Screen</span>
