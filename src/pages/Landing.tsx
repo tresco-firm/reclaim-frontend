@@ -15,7 +15,7 @@ const Landing = () => (
     </section>
     <section className="flex flex-col items-center justify-center min-w-[50%]">
       <div>
-        <img src="/public/hero.png" alt="Landing" className="w-200 h-200" />
+        <img src="/hero.png" alt="Landing" className="w-200 h-200" />
       </div>
     </section>
   </main>
