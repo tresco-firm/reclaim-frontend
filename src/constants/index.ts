@@ -2,6 +2,8 @@ export const navLinks = [
   { href: "/", label: "Why Reclaim" },
   { href: "/science", label: "The Science" },
   { href: "/join", label: "Join the Movement" },
+  { href: "/lost-time-calculator", label: "Lost Time Calculator" },
+  { href: "/dashboard", label: "Dashboard" },
 ];
 
 export const statistics = [

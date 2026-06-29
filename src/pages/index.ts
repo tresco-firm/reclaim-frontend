@@ -3,3 +3,5 @@ export { default as Science } from "./Science";
 export { default as JoinTheMovement } from "./JoinTheMovement";
 export { default as ErrorPage } from "./ErrorPage";
 export { default as Questionnaires } from "./Questionnaires";
+export { default as LostTimeCalculator } from "./LostTimeCalculator";
+export { default as Dashboard } from "./Dashboard";
