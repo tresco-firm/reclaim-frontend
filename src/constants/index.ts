@@ -1,7 +1,7 @@
 export const navLinks = [
-  { href: "#", label: "Why Reclaim" },
-  { href: "#about-us", label: "The Science" },
-  { href: "#products", label: "Join the Movement" },
+  { href: "/", label: "Why Reclaim" },
+  { href: "/science", label: "The Science" },
+  { href: "/join", label: "Join the Movement" },
 ];
 
 export const statistics = [
@@ -14,4 +14,10 @@ export const footerLinks = [
   { href: "#", label: "Privacy Policy" },
   { href: "#", label: "Terms of Service" },
   { href: "#", label: "Scientific Papers" },
+];
+
+export const someStatistics = [
+  { value: "75k+", label: "HOURS RECLAIMED" },
+  { value: "15,000+", label: "ACTIVE USERS" },
+  { value: "4.9", label: "RATING" },
 ];

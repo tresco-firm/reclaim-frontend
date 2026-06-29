@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../constants";
 import { useAuth } from "../utils/auth";
@@ -19,13 +20,13 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden gap-3 lg:gap-10 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="p-2 font-semibold transition hover:text-primary hover:border-b-4 hover:border-primary"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <section className="authentication-section max-md:hidden">
@@ -56,14 +57,14 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute left-0 z-50 flex flex-col w-full bg-white shadow-lg md:hidden">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="px-8 py-4 border-b hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {user ? (
