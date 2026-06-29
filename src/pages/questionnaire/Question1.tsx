@@ -9,7 +9,7 @@ const Question1 = ({ value, onChange }: Question1Props) => {
   const booksNotRead = Math.round(monthlyHours * 2);
 
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+    <div className="flex flex-col items-center w-full max-w-5xl mx-auto text-center">
       <h1 className="max-w-4xl text-4xl font-bold leading-tight text-on-surface md:text-6xl">
         How many hours disappear into scrolling every day?
       </h1>
@@ -17,8 +17,8 @@ const Question1 = ({ value, onChange }: Question1Props) => {
         Be honest. We're here to help you get them back.
       </p>
 
-      <div className="mt-20 w-full max-w-4xl text-left">
-        <p className="text-6xl font-bold text-[#ff9b3d] md:text-7xl">
+      <div className="w-full max-w-4xl mt-20 text-left">
+        <p className="text-4xl font-bold text-[#ff9b3d] md:text-7xl">
           {value.toFixed(1)}
           <span className="ml-3 text-3xl text-on-surface md:text-4xl">
             hrs / day
@@ -41,17 +41,25 @@ const Question1 = ({ value, onChange }: Question1Props) => {
           }}
         />
 
-        <div className="mt-5 flex justify-between text-sm font-semibold text-outline">
+        <div className="flex justify-between mt-5 text-sm font-semibold text-outline">
           <span>0h</span>
           <span>12h+</span>
         </div>
 
-        <div className="mt-14 h-px bg-secondary-container" />
+        <div className="h-px mt-14 bg-secondary-container" />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          <MetricCard label="Hours lost monthly" value={monthlyHours} unit="hrs" />
+        <div className="grid gap-6 mt-14 md:grid-cols-3">
+          <MetricCard
+            label="Hours lost monthly"
+            value={monthlyHours}
+            unit="hrs"
+          />
           <MetricCard label="Days lost yearly" value={yearlyDays} unit="days" />
-          <MetricCard label="Books not read" value={booksNotRead} unit="books" />
+          <MetricCard
+            label="Books not read"
+            value={booksNotRead}
+            unit="books"
+          />
         </div>
       </div>
     </div>

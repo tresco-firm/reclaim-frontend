@@ -6,4 +6,7 @@ export type Answers = {
   scrollingTriggers: string[];
   habitStatement: string;
   commitmentPercent: number;
+  reclaimedTimeUses: string[];
+  focusDream: string;
+  whyThisDreamMatters: string;
 };

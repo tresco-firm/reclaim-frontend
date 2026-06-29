@@ -34,10 +34,7 @@ const Question2 = ({ value, onChange }: Question2Props) => {
 
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col items-center text-center">
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
-        Step 1 of 5
-      </p>
-      <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-on-surface md:text-6xl">
+      <h1 className="max-w-4xl text-4xl font-bold leading-tight text-on-surface md:text-6xl">
         Which app steals most of your attention?
       </h1>
       <p className="mt-7 max-w-3xl text-lg leading-8 text-on-surface-variant md:text-2xl">

@@ -16,10 +16,7 @@ const Question7 = ({ value, onChange }: Question7Props) => {
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-on-surface-variant">
-        Step 6 of 6
-      </p>
-      <h1 className="mt-28 max-w-5xl text-4xl font-bold leading-tight text-on-surface md:text-6xl">
+      <h1 className="max-w-5xl text-4xl font-bold leading-tight text-on-surface md:text-6xl">
         How committed are you to changing your digital habits?
       </h1>
       <p className="mt-8 text-lg leading-8 text-on-surface-variant md:text-2xl">

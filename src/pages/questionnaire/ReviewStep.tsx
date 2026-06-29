@@ -46,6 +46,26 @@ const ReviewStep = ({ answers }: { answers: Answers }) => (
           {answers.commitmentPercent}%
         </p>
       </div>
+      <div>
+        <h3 className="font-semibold text-slate-800">Reclaimed time uses</h3>
+        <p className="mt-2 text-slate-600">
+          {answers.reclaimedTimeUses.join(", ") || "No answer provided"}
+        </p>
+      </div>
+      <div>
+        <h3 className="font-semibold text-slate-800">Focus dream</h3>
+        <p className="mt-2 text-slate-600">
+          {answers.focusDream || "No answer provided"}
+        </p>
+      </div>
+      <div>
+        <h3 className="font-semibold text-slate-800">
+          Why this dream matters
+        </h3>
+        <p className="mt-2 text-slate-600">
+          {answers.whyThisDreamMatters || "No answer provided"}
+        </p>
+      </div>
     </div>
   </div>
 );

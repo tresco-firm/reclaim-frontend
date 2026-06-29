@@ -7,6 +7,9 @@ import Question4 from "./questionnaire/Question4";
 import Question5 from "./questionnaire/Question5";
 import Question6 from "./questionnaire/Question6";
 import Question7 from "./questionnaire/Question7";
+import Question8 from "./questionnaire/Question8";
+import Question9 from "./questionnaire/Question9";
+import Question10 from "./questionnaire/Question10";
 import SubmittedStep from "./questionnaire/SubmittedStep";
 import type { Answers } from "./questionnaire/types";
 import { supabase } from "../config/supabase";
@@ -20,9 +23,12 @@ const initialAnswers: Answers = {
   scrollingTriggers: [],
   habitStatement: "",
   commitmentPercent: 25,
+  reclaimedTimeUses: [],
+  focusDream: "",
+  whyThisDreamMatters: "",
 };
 
-const totalSteps = 7;
+const totalSteps = 10;
 
 const Questionnaires = () => {
   const [step, setStep] = useState(0);
@@ -44,7 +50,10 @@ const Questionnaires = () => {
     (step === 3 && answers.distractionWindow.length > 0) ||
     (step === 4 && answers.scrollingTriggers.length > 0) ||
     (step === 5 && answers.habitStatement.length > 0) ||
-    step === 6;
+    step === 6 ||
+    (step === 7 && answers.reclaimedTimeUses.length > 0) ||
+    (step === 8 && answers.focusDream.trim().length > 0) ||
+    (step === 9 && answers.whyThisDreamMatters.trim().length > 0);
 
   const setAnswer = <Key extends keyof Answers>(
     key: Key,
@@ -91,6 +100,9 @@ const Questionnaires = () => {
         scrolling_triggers: answers.scrollingTriggers,
         habit_statement: answers.habitStatement,
         commitment_percent: answers.commitmentPercent,
+        reclaimed_time_uses: answers.reclaimedTimeUses,
+        focus_dream: answers.focusDream,
+        why_this_dream_matters: answers.whyThisDreamMatters,
         updated_at: new Date().toISOString(),
       },
       { onConflict: "email" },
@@ -136,11 +148,9 @@ const Questionnaires = () => {
               style={{ width: `${progress}%` }}
             />
           </div>
-          {step >= 4 && (
-            <p className="mt-5 text-center text-sm font-bold uppercase tracking-[0.18em] text-on-surface-variant">
-              Step {step - 1} of 6
-            </p>
-          )}
+          <p className="mt-5 text-center text-sm font-bold uppercase tracking-[0.18em] text-on-surface-variant">
+            Step {step + 1} of {totalSteps}
+          </p>
         </div>
 
         {step === 0 ? (
@@ -207,6 +217,25 @@ const Questionnaires = () => {
           <Question7
             value={answers.commitmentPercent}
             onChange={(value) => setAnswer("commitmentPercent", value)}
+          />
+        )}
+        {step === 7 && (
+          <Question8
+            value={answers.reclaimedTimeUses}
+            onChange={(value) => setAnswer("reclaimedTimeUses", value)}
+          />
+        )}
+        {step === 8 && (
+          <Question9
+            value={answers.focusDream}
+            onChange={(value) => setAnswer("focusDream", value)}
+          />
+        )}
+        {step === 9 && (
+          <Question10
+            dream={answers.focusDream}
+            value={answers.whyThisDreamMatters}
+            onChange={(value) => setAnswer("whyThisDreamMatters", value)}
           />
         )}
       </section>

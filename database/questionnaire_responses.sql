@@ -12,6 +12,9 @@ create table if not exists public.questionnaire_responses (
   commitment_percent integer not null check (
     commitment_percent between 1 and 100
   ),
+  reclaimed_time_uses text[] not null default '{}',
+  focus_dream text not null default '',
+  why_this_dream_matters text not null default '',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
